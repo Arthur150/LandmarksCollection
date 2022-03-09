@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Coordinate: Codable {
+class Coordinates: Decodable {
     var longitude: Double
     var latitude: Double
 }

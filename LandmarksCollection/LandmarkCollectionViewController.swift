@@ -9,9 +9,12 @@ import UIKit
 
 class LandmarkCollectionViewController: UICollectionViewController {
 
+    var landmarks: [Landmark]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        landmarks = LandmarkRepository.shared.landmarks
     }
 
 
