@@ -13,6 +13,8 @@
 		087BCA4C27D8B9E700F74A3A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 087BCA4A27D8B9E700F74A3A /* Main.storyboard */; };
 		087BCA4E27D8B9E900F74A3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 087BCA4D27D8B9E900F74A3A /* Assets.xcassets */; };
 		087BCA5127D8B9E900F74A3A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 087BCA4F27D8B9E900F74A3A /* LaunchScreen.storyboard */; };
+		087BCA5B27D8BA4400F74A3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 087BCA5927D8BA4400F74A3A /* Assets.xcassets */; };
+		087BCA5C27D8BA4400F74A3A /* landmarkData.json in Resources */ = {isa = PBXBuildFile; fileRef = 087BCA5A27D8BA4400F74A3A /* landmarkData.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		087BCA4D27D8B9E900F74A3A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		087BCA5027D8B9E900F74A3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		087BCA5227D8B9E900F74A3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		087BCA5927D8BA4400F74A3A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		087BCA5A27D8BA4400F74A3A /* landmarkData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = landmarkData.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,8 +67,18 @@
 				087BCA4D27D8B9E900F74A3A /* Assets.xcassets */,
 				087BCA4F27D8B9E900F74A3A /* LaunchScreen.storyboard */,
 				087BCA5227D8B9E900F74A3A /* Info.plist */,
+				087BCA5827D8BA4400F74A3A /* Mock_iOS_Avance */,
 			);
 			path = LandmarksCollection;
+			sourceTree = "<group>";
+		};
+		087BCA5827D8BA4400F74A3A /* Mock_iOS_Avance */ = {
+			isa = PBXGroup;
+			children = (
+				087BCA5927D8BA4400F74A3A /* Assets.xcassets */,
+				087BCA5A27D8BA4400F74A3A /* landmarkData.json */,
+			);
+			path = Mock_iOS_Avance;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,6 +141,8 @@
 			files = (
 				087BCA5127D8B9E900F74A3A /* LaunchScreen.storyboard in Resources */,
 				087BCA4E27D8B9E900F74A3A /* Assets.xcassets in Resources */,
+				087BCA5B27D8BA4400F74A3A /* Assets.xcassets in Resources */,
+				087BCA5C27D8BA4400F74A3A /* landmarkData.json in Resources */,
 				087BCA4C27D8B9E700F74A3A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
