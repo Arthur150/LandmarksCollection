@@ -35,7 +35,7 @@
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gAQ-Su-k7k">
                                             <rect key="frame" x="10" y="208" width="408" height="24"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -57,32 +57,36 @@
                                 </connections>
                             </collectionViewCell>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="smallCell" id="LTU-LH-KMV" customClass="SmallCell" customModule="LandmarksCollection" customModuleProvider="target">
-                                <rect key="frame" x="150" y="252" width="128" height="128"/>
+                                <rect key="frame" x="150" y="252" width="128" height="150"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Svk-jI-uQ3">
-                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="128" height="150"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vui-gX-ffa">
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="vui-gX-ffa" secondAttribute="height" id="Fp6-j9-iGF"/>
+                                            </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F5B-gF-MqW">
-                                            <rect key="frame" x="5" y="102" width="118" height="21"/>
+                                            <rect key="frame" x="0.0" y="133" width="128" height="17"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="vui-gX-ffa" firstAttribute="leading" secondItem="Svk-jI-uQ3" secondAttribute="leading" id="EGW-jg-DYh"/>
-                                        <constraint firstAttribute="bottom" secondItem="F5B-gF-MqW" secondAttribute="bottom" constant="5" id="XqT-Cr-kkI"/>
-                                        <constraint firstAttribute="trailing" secondItem="F5B-gF-MqW" secondAttribute="trailing" constant="5" id="aTE-TL-qff"/>
-                                        <constraint firstItem="vui-gX-ffa" firstAttribute="top" secondItem="Svk-jI-uQ3" secondAttribute="top" id="gi3-en-sDb"/>
-                                        <constraint firstItem="F5B-gF-MqW" firstAttribute="leading" secondItem="Svk-jI-uQ3" secondAttribute="leading" constant="5" id="lIj-5Q-YXs"/>
-                                        <constraint firstAttribute="trailing" secondItem="vui-gX-ffa" secondAttribute="trailing" id="y0S-S6-K2Y"/>
-                                        <constraint firstAttribute="bottom" secondItem="vui-gX-ffa" secondAttribute="bottom" id="yRr-Hu-DID"/>
+                                        <constraint firstAttribute="trailing" secondItem="vui-gX-ffa" secondAttribute="trailing" id="Ccj-Yo-TFR"/>
+                                        <constraint firstItem="vui-gX-ffa" firstAttribute="leading" secondItem="Svk-jI-uQ3" secondAttribute="leading" id="YDJ-Mx-yz7"/>
+                                        <constraint firstAttribute="trailing" secondItem="F5B-gF-MqW" secondAttribute="trailing" id="aNs-p9-0G7"/>
+                                        <constraint firstItem="F5B-gF-MqW" firstAttribute="top" secondItem="vui-gX-ffa" secondAttribute="bottom" constant="5" id="fs5-sg-jTH"/>
+                                        <constraint firstItem="vui-gX-ffa" firstAttribute="top" secondItem="Svk-jI-uQ3" secondAttribute="top" id="kHg-Fq-wOM"/>
+                                        <constraint firstItem="F5B-gF-MqW" firstAttribute="leading" secondItem="Svk-jI-uQ3" secondAttribute="leading" id="qvY-JQ-BJC"/>
+                                        <constraint firstAttribute="bottom" secondItem="F5B-gF-MqW" secondAttribute="bottom" id="zBR-Fc-tvN"/>
                                     </constraints>
                                 </collectionViewCellContentView>
+                                <size key="customSize" width="128" height="150"/>
                                 <connections>
                                     <outlet property="image" destination="vui-gX-ffa" id="d1C-1X-opc"/>
                                     <outlet property="title" destination="F5B-gF-MqW" id="mHk-2d-g6d"/>

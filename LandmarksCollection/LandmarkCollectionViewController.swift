@@ -9,12 +9,12 @@ import UIKit
 
 class LandmarkCollectionViewController: UICollectionViewController {
     
-    enum Section: CaseIterable {
-        case featured
-        case favorites
-        case rivers
-        case lakes
-        case mountains
+    enum Section: String, CaseIterable {
+        case featured = "Featured"
+        case favorites = "Favorites"
+        case rivers = "Rivers"
+        case lakes = "Lakes"
+        case mountains = "Mountains"
     }
     
     enum Item: Hashable {
@@ -26,6 +26,8 @@ class LandmarkCollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        collectionView.register(UINib(nibName: "HeaderCollectionReusableView", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "HeaderCollectionReusableView")
         
         configureDataSource()
         collectionView.collectionViewLayout = createLayout()
@@ -45,6 +47,19 @@ class LandmarkCollectionViewController: UICollectionViewController {
                 return cell
             }
         })
+        
+        diffableDataSource.supplementaryViewProvider = { collectionView, elementKind, indexPath in
+            switch elementKind {
+            case UICollectionView.elementKindSectionHeader:
+                let section = self.diffableDataSource.sectionIdentifier(for: indexPath.section)!
+                let header = collectionView.dequeueReusableSupplementaryView(ofKind: elementKind, withReuseIdentifier: "HeaderCollectionReusableView", for: indexPath) as! HeaderCollectionReusableView
+                header.build(section: section)
+                
+                return header
+            default:
+                return nil
+            }
+        }
     }
     
     private func createSnapshot() -> NSDiffableDataSourceSnapshot<Section,Item>{
@@ -66,21 +81,21 @@ class LandmarkCollectionViewController: UICollectionViewController {
             case .rivers:
                 
                 let items = LandmarkRepository.shared.getLandmarksCategory(category: .river).map { landmark in
-                        return Item.smallCell(landmark)
-                    }
-                    snapshot.appendItems(items, toSection: section)
+                    return Item.smallCell(landmark)
+                }
+                snapshot.appendItems(items, toSection: section)
             case .lakes:
                 
                 let items = LandmarkRepository.shared.getLandmarksCategory(category: .lakes).map { landmark in
-                        return Item.smallCell(landmark)
-                    }
-                    snapshot.appendItems(items, toSection: section)
+                    return Item.smallCell(landmark)
+                }
+                snapshot.appendItems(items, toSection: section)
             case .mountains:
                 
                 let items = LandmarkRepository.shared.getLandmarksCategory(category: .mountains).map { landmark in
-                        return Item.smallCell(landmark)
-                    }
-                    snapshot.appendItems(items, toSection: section)
+                    return Item.smallCell(landmark)
+                }
+                snapshot.appendItems(items, toSection: section)
             }
         }
         
@@ -101,21 +116,21 @@ class LandmarkCollectionViewController: UICollectionViewController {
             
             switch section {
             case .featured:
-                return self.createLargeCellSection()
+                return self.createLargeCellSection(sectionType: section)
             case .favorites:
-                let section = self.createSmallCellSection()
+                let section = self.createSmallCellSection(sectionType: section)
                 
                 return section
             case .rivers:
-                let section = self.createSmallCellSection()
+                let section = self.createSmallCellSection(sectionType: section)
                 
                 return section
             case .lakes:
-                let section = self.createSmallCellSection()
+                let section = self.createSmallCellSection(sectionType: section)
                 
                 return section
             case .mountains:
-                let section = self.createSmallCellSection()
+                let section = self.createSmallCellSection(sectionType: section)
                 
                 return section
             }
@@ -124,7 +139,7 @@ class LandmarkCollectionViewController: UICollectionViewController {
         return layout
     }
     
-    func createLargeCellSection() -> NSCollectionLayoutSection {
+    func createLargeCellSection(sectionType: Section) -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
         
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
@@ -135,22 +150,32 @@ class LandmarkCollectionViewController: UICollectionViewController {
         section.orthogonalScrollingBehavior = .groupPaging
         section.contentInsets = NSDirectionalEdgeInsets.init(top: 10, leading: 0, bottom: 10, trailing: 0)
         
+        let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(50))
+        let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
+        
+        section.boundarySupplementaryItems = [header]
+        
         return section
     }
     
-    func createSmallCellSection() -> NSCollectionLayoutSection {
+    func createSmallCellSection(sectionType: Section) -> NSCollectionLayoutSection {
         
-            let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
-            
-            let item = NSCollectionLayoutItem(layoutSize: itemSize)
-            let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1/4), heightDimension: .absolute(100))
-            let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 1)
-            let section = NSCollectionLayoutSection(group: group)
-            section.interGroupSpacing = 8
-            section.orthogonalScrollingBehavior = .continuous
-            section.contentInsets = NSDirectionalEdgeInsets.init(top: 10, leading: 5, bottom: 10, trailing: 5)
-            
-            return section
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
+        
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(100), heightDimension: .absolute(130))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 1)
+        let section = NSCollectionLayoutSection(group: group)
+        section.interGroupSpacing = 8
+        section.orthogonalScrollingBehavior = .continuous
+        section.contentInsets = NSDirectionalEdgeInsets.init(top: 10, leading: 5, bottom: 10, trailing: 5)
+        
+        let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(50))
+        let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
+        
+        section.boundarySupplementaryItems = [header]
+        
+        return section
     }
     
 }
