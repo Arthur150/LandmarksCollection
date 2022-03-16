@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		082C045927E1D77B00346A49 /* LandmarkDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082C045827E1D77B00346A49 /* LandmarkDetailViewController.swift */; };
 		086E6D6E27D8BF5D0026992C /* Landmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086E6D6D27D8BF5D0026992C /* Landmark.swift */; };
 		086E6D7327D8C53F0026992C /* LandmarkRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086E6D7227D8C53F0026992C /* LandmarkRepository.swift */; };
 		086E6D7827D8E73C0026992C /* LargeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086E6D7727D8E73C0026992C /* LargeCell.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		082C045827E1D77B00346A49 /* LandmarkDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkDetailViewController.swift; sourceTree = "<group>"; };
 		086E6D6D27D8BF5D0026992C /* Landmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Landmark.swift; sourceTree = "<group>"; };
 		086E6D7227D8C53F0026992C /* LandmarkRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkRepository.swift; sourceTree = "<group>"; };
 		086E6D7727D8E73C0026992C /* LargeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeCell.swift; sourceTree = "<group>"; };
@@ -51,6 +53,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		082C045A27E1DB8200346A49 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				087BCA4827D8B9E700F74A3A /* LandmarkCollectionViewController.swift */,
+				082C045827E1D77B00346A49 /* LandmarkDetailViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		086E6D6C27D8BF3A0026992C /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -97,12 +108,12 @@
 		087BCA4327D8B9E700F74A3A /* LandmarksCollection */ = {
 			isa = PBXGroup;
 			children = (
+				082C045A27E1DB8200346A49 /* Controller */,
 				086E6D7627D8E7260026992C /* View */,
 				086E6D7127D8C3AC0026992C /* Repository */,
 				086E6D6C27D8BF3A0026992C /* Model */,
 				087BCA4427D8B9E700F74A3A /* AppDelegate.swift */,
 				087BCA4627D8B9E700F74A3A /* SceneDelegate.swift */,
-				087BCA4827D8B9E700F74A3A /* LandmarkCollectionViewController.swift */,
 				087BCA4A27D8B9E700F74A3A /* Main.storyboard */,
 				087BCA5927D8BA4400F74A3A /* Assets.xcassets */,
 				087BCA5A27D8BA4400F74A3A /* landmarkData.json */,
@@ -188,6 +199,7 @@
 				086E6D7E27D902470026992C /* HeaderCollectionReusableView.swift in Sources */,
 				087BCA4927D8B9E700F74A3A /* LandmarkCollectionViewController.swift in Sources */,
 				087BCA4527D8B9E700F74A3A /* AppDelegate.swift in Sources */,
+				082C045927E1D77B00346A49 /* LandmarkDetailViewController.swift in Sources */,
 				087BCA4727D8B9E700F74A3A /* SceneDelegate.swift in Sources */,
 				086E6D7827D8E73C0026992C /* LargeCell.swift in Sources */,
 				086E6D7327D8C53F0026992C /* LandmarkRepository.swift in Sources */,

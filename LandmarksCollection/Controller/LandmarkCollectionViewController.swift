@@ -111,8 +111,8 @@ class LandmarkCollectionViewController: UICollectionViewController {
         let layout = UICollectionViewCompositionalLayout { [weak self] sectionIndex, collectionLayoutEnvironment in
             guard let self = self,
                   let section = self.diffableDataSource.sectionIdentifier(for: sectionIndex) else {
-                      return nil
-                  }
+                return nil
+            }
             
             switch section {
             case .featured:
@@ -176,6 +176,29 @@ class LandmarkCollectionViewController: UICollectionViewController {
         section.boundarySupplementaryItems = [header]
         
         return section
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "showDetailLandmark"){
+            if let destination = segue.destination as? DetailLandmarkViewController{
+                guard let indexPath = collectionView.indexPath(for: sender as! UICollectionViewCell), let section = diffableDataSource.sectionIdentifier(for: indexPath.section) else {
+                    return
+                }
+                switch section {
+                case .featured:
+                    destination.landmark = LandmarkRepository.shared.getLandmarksFeatured()[collectionView.indexPath(for: sender as! UICollectionViewCell)!.item]
+                case .favorites:
+                    destination.landmark = LandmarkRepository.shared.getLandmarksFavorites()[collectionView.indexPath(for: sender as! UICollectionViewCell)!.item]
+                case .mountains:
+                    destination.landmark = LandmarkRepository.shared.getLandmarksCategory(category: .mountains)[collectionView.indexPath(for: sender as! UICollectionViewCell)!.item]
+                case .lakes:
+                    destination.landmark = LandmarkRepository.shared.getLandmarksCategory(category: .lakes)[collectionView.indexPath(for: sender as! UICollectionViewCell)!.item]
+                case .rivers:
+                    destination.landmark = LandmarkRepository.shared.getLandmarksCategory(category: .river)[collectionView.indexPath(for: sender as! UICollectionViewCell)!.item]
+                }
+                
+            }
+        }
     }
     
 }
