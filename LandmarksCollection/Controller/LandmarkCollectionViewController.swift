@@ -10,11 +10,11 @@ import UIKit
 class LandmarkCollectionViewController: UICollectionViewController {
     
     enum Section: String, CaseIterable {
-        case featured = "Featured"
-        case favorites = "Favorites"
-        case rivers = "Rivers"
-        case lakes = "Lakes"
-        case mountains = "Mountains"
+        case featured = "✨ Featured"
+        case favorites = "⭐ Favorites"
+        case rivers = "🐟 Rivers"
+        case lakes = "💧 Lakes"
+        case mountains = "⛰️ Mountains"
     }
     
     enum Item: Hashable {
@@ -64,7 +64,7 @@ class LandmarkCollectionViewController: UICollectionViewController {
     
     private func createSnapshot() -> NSDiffableDataSourceSnapshot<Section,Item>{
         var snapshot = NSDiffableDataSourceSnapshot<Section,Item>()
-        snapshot.appendSections([.featured,.favorites,.rivers,.lakes,.mountains])
+        snapshot.appendSections([.featured,.favorites,.mountains,.rivers,.lakes])
         
         Section.allCases.forEach { section in
             switch section {

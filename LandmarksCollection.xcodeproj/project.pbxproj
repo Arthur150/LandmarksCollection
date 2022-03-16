@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		082C045927E1D77B00346A49 /* LandmarkDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082C045827E1D77B00346A49 /* LandmarkDetailViewController.swift */; };
+		082C045C27E21EE500346A49 /* LandmarkAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082C045B27E21EE500346A49 /* LandmarkAnnotation.swift */; };
 		086E6D6E27D8BF5D0026992C /* Landmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086E6D6D27D8BF5D0026992C /* Landmark.swift */; };
 		086E6D7327D8C53F0026992C /* LandmarkRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086E6D7227D8C53F0026992C /* LandmarkRepository.swift */; };
 		086E6D7827D8E73C0026992C /* LargeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086E6D7727D8E73C0026992C /* LargeCell.swift */; };
@@ -25,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		082C045827E1D77B00346A49 /* LandmarkDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkDetailViewController.swift; sourceTree = "<group>"; };
+		082C045B27E21EE500346A49 /* LandmarkAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkAnnotation.swift; sourceTree = "<group>"; };
 		086E6D6D27D8BF5D0026992C /* Landmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Landmark.swift; sourceTree = "<group>"; };
 		086E6D7227D8C53F0026992C /* LandmarkRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkRepository.swift; sourceTree = "<group>"; };
 		086E6D7727D8E73C0026992C /* LargeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeCell.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 			isa = PBXGroup;
 			children = (
 				086E6D6D27D8BF5D0026992C /* Landmark.swift */,
+				082C045B27E21EE500346A49 /* LandmarkAnnotation.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -198,6 +201,7 @@
 			files = (
 				086E6D7E27D902470026992C /* HeaderCollectionReusableView.swift in Sources */,
 				087BCA4927D8B9E700F74A3A /* LandmarkCollectionViewController.swift in Sources */,
+				082C045C27E21EE500346A49 /* LandmarkAnnotation.swift in Sources */,
 				087BCA4527D8B9E700F74A3A /* AppDelegate.swift in Sources */,
 				082C045927E1D77B00346A49 /* LandmarkDetailViewController.swift in Sources */,
 				087BCA4727D8B9E700F74A3A /* SceneDelegate.swift in Sources */,
