@@ -116,7 +116,7 @@ class LandmarkCollectionViewController: UICollectionViewController {
             
             switch section {
             case .featured:
-                return self.createLargeCellSection(sectionType: section)
+                return self.createLargeCellSection(sectionType: section,environment: collectionLayoutEnvironment)
             case .favorites:
                 let section = self.createSmallCellSection(sectionType: section)
                 
@@ -139,23 +139,44 @@ class LandmarkCollectionViewController: UICollectionViewController {
         return layout
     }
     
-    func createLargeCellSection(sectionType: Section) -> NSCollectionLayoutSection {
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
+    func createLargeCellSection(sectionType: Section, environment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection {
         
-        let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(250))
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 1)
-        let section = NSCollectionLayoutSection(group: group)
-        section.interGroupSpacing = 8
-        section.orthogonalScrollingBehavior = .groupPaging
-        section.contentInsets = NSDirectionalEdgeInsets.init(top: 10, leading: 0, bottom: 10, trailing: 0)
-        
-        let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(50))
-        let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
-        
-        section.boundarySupplementaryItems = [header]
-        
-        return section
+        switch (environment.traitCollection.horizontalSizeClass, environment.traitCollection.verticalSizeClass) {
+        case (.compact,_):
+            let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
+            
+            let item = NSCollectionLayoutItem(layoutSize: itemSize)
+            let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(250))
+            let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 1)
+            let section = NSCollectionLayoutSection(group: group)
+            section.interGroupSpacing = 8
+            section.orthogonalScrollingBehavior = .groupPaging
+            section.contentInsets = NSDirectionalEdgeInsets.init(top: 10, leading: 0, bottom: 10, trailing: 0)
+            
+            let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(50))
+            let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
+            
+            section.boundarySupplementaryItems = [header]
+            
+            return section
+        default:
+            let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
+            
+            let item = NSCollectionLayoutItem(layoutSize: itemSize)
+            let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(350), heightDimension: .absolute(250))
+            let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 1)
+            let section = NSCollectionLayoutSection(group: group)
+            section.interGroupSpacing = 8
+            section.orthogonalScrollingBehavior = .continuous
+            section.contentInsets = NSDirectionalEdgeInsets.init(top: 10, leading: 0, bottom: 10, trailing: 0)
+            
+            let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(50))
+            let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
+            
+            section.boundarySupplementaryItems = [header]
+            
+            return section
+        }
     }
     
     func createSmallCellSection(sectionType: Section) -> NSCollectionLayoutSection {

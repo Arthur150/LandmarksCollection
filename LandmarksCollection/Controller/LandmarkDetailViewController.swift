@@ -35,6 +35,9 @@ class DetailLandmarkViewController: UIViewController {
         mapView.addAnnotation(annotation)
         
         mapView.centerToLocation(initialLocation)
+        mapView.isScrollEnabled = false
+        mapView.isZoomEnabled = false
+        mapView.isRotateEnabled = false
         
       
         detailLabel.text = landmark.description

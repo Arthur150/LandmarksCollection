@@ -187,10 +187,14 @@
                         <color key="tintColor" name="AccentColor"/>
                         <constraints>
                             <constraint firstItem="UOR-l1-GWC" firstAttribute="bottom" secondItem="XN1-QU-ee6" secondAttribute="bottom" id="1vX-ba-jqq"/>
+                            <constraint firstItem="Psz-vU-xru" firstAttribute="width" secondItem="XN1-QU-ee6" secondAttribute="width" multiplier="0.906542" id="64D-qj-MHw"/>
+                            <constraint firstItem="SKI-vV-S64" firstAttribute="width" secondItem="XN1-QU-ee6" secondAttribute="width" multiplier="0.906542" id="9bH-4J-3re"/>
                             <constraint firstItem="UOR-l1-GWC" firstAttribute="trailing" secondItem="XN1-QU-ee6" secondAttribute="trailing" id="B6l-WX-fcG"/>
                             <constraint firstItem="UOR-l1-GWC" firstAttribute="top" secondItem="A4Z-YK-RXw" secondAttribute="top" id="KTf-fd-LNw"/>
                             <constraint firstItem="UOR-l1-GWC" firstAttribute="leading" secondItem="XN1-QU-ee6" secondAttribute="leading" id="ZNL-KT-ydx"/>
                             <constraint firstItem="msN-x4-QcF" firstAttribute="width" secondItem="XN1-QU-ee6" secondAttribute="width" id="gPL-qB-l7g"/>
+                            <constraint firstItem="bHH-0O-UR6" firstAttribute="width" secondItem="XN1-QU-ee6" secondAttribute="width" multiplier="0.906542" id="guv-kj-OXg"/>
+                            <constraint firstItem="IZg-dY-2VR" firstAttribute="width" secondItem="XN1-QU-ee6" secondAttribute="width" multiplier="0.906542" id="o55-Ct-lOM"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Name of Landmark" id="4U5-KP-nAy"/>
