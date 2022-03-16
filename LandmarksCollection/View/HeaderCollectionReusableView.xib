@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -14,7 +14,7 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A6w-P9-aj5">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                    <rect key="frame" x="20" y="0.0" width="414" height="50"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -22,10 +22,10 @@
             </subviews>
             <viewLayoutGuide key="safeArea" id="Nxr-qC-HAo"/>
             <constraints>
+                <constraint firstItem="A6w-P9-aj5" firstAttribute="trailing" secondItem="Nxr-qC-HAo" secondAttribute="trailing" constant="20" id="8pH-NU-5vp"/>
                 <constraint firstItem="A6w-P9-aj5" firstAttribute="top" secondItem="eqY-An-qMf" secondAttribute="top" id="Fql-6n-N4z"/>
-                <constraint firstAttribute="trailing" secondItem="A6w-P9-aj5" secondAttribute="trailing" id="LPa-xz-zVR"/>
                 <constraint firstItem="Nxr-qC-HAo" firstAttribute="bottom" secondItem="A6w-P9-aj5" secondAttribute="bottom" id="UqE-qm-OHf"/>
-                <constraint firstItem="A6w-P9-aj5" firstAttribute="leading" secondItem="eqY-An-qMf" secondAttribute="leading" id="hcj-Fd-Hjm"/>
+                <constraint firstItem="A6w-P9-aj5" firstAttribute="leading" secondItem="Nxr-qC-HAo" secondAttribute="leading" constant="20" id="vfF-ni-mCe"/>
             </constraints>
             <connections>
                 <outlet property="title" destination="A6w-P9-aj5" id="KOk-4y-wVz"/>
