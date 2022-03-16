@@ -22,4 +22,22 @@ class LandmarkRepository {
             print("Unable to load data.")
         }
     }
+    
+    func getLandmarksFeatured() -> [Landmark]{
+        return landmarks.filter { landmark in
+            landmark.isFeatured
+        }
+    }
+    
+    func getLandmarksFavorites() -> [Landmark]{
+        return landmarks.filter { landmark in
+            landmark.isFavorite
+        }
+    }
+    
+    func getLandmarksCategory(category: Landmark.Category) -> [Landmark]{
+        return landmarks.filter { landmark in
+            landmark.category == category 
+        }
+    }
 }

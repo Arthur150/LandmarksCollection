@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="eqY-An-qMf" customClass="HeaderCollectionReusableView" customModule="LandmarksCollection" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A6w-P9-aj5">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="Nxr-qC-HAo"/>
+            <constraints>
+                <constraint firstItem="A6w-P9-aj5" firstAttribute="top" secondItem="eqY-An-qMf" secondAttribute="top" id="Fql-6n-N4z"/>
+                <constraint firstAttribute="trailing" secondItem="A6w-P9-aj5" secondAttribute="trailing" id="LPa-xz-zVR"/>
+                <constraint firstItem="Nxr-qC-HAo" firstAttribute="bottom" secondItem="A6w-P9-aj5" secondAttribute="bottom" id="UqE-qm-OHf"/>
+                <constraint firstItem="A6w-P9-aj5" firstAttribute="leading" secondItem="eqY-An-qMf" secondAttribute="leading" id="hcj-Fd-Hjm"/>
+            </constraints>
+            <connections>
+                <outlet property="title" destination="A6w-P9-aj5" id="KOk-4y-wVz"/>
+            </connections>
+            <point key="canvasLocation" x="381" y="-86"/>
+        </collectionReusableView>
+    </objects>
+</document>
